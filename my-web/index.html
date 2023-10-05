@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <title>Vite App</title>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+  <style>
+    ion-split-pane {
+      --side-width: 200px;
+      --side-max-width: 200px;
+    }
+  </style>
+
+<script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <ion-split-pane when="lg" content-id="main">
+    <ion-menu content-id="main">
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding" hx-target="#app-content"> 
+        <ion-list>
+          <ion-item>
+            <ion-label role="button" hx-get="home.html">Home</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label role="button" hx-get="about.html">About</ion-label>
+          </ion-item>
+        </ion-list>  
+      </ion-content>
+    </ion-menu>
+  
+    <div class="ion-page" id="main">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title>Main View</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding" id="app-content" hx-get="home.html" hx-trigger="load"> 
+        
+      </ion-content>
+    </div>
+  </ion-split-pane>
+</body>
+
+</html>
