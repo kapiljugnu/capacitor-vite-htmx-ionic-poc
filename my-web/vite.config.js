@@ -12,7 +12,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         about: resolve(__dirname, 'about.html'),
         home: resolve(__dirname, 'home.html'),
-      }
+      },
     }
   },
 });
