@@ -10,9 +10,8 @@
   <meta name="msapplication-tap-highlight" content="no" />
   <title>Vite App</title>
 
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="./app.js"></script>
+  <link rel="stylesheet" href="./style.css" />
 
   <style>
     ion-split-pane {
@@ -20,7 +19,7 @@
       --side-max-width: 200px;
     }
   </style>
-  <script type="module" src="./app.js"></script>
+  
 </head>
 
 <body>
@@ -31,7 +30,7 @@
           <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding" hx-target="#app-content"> 
+      <ion-content class="ion-padding" hx-target="#app-content">
         <ion-list>
           <ion-item>
             <ion-label role="button" hx-get="home.html">Home</ion-label>
@@ -39,10 +38,10 @@
           <ion-item>
             <ion-label role="button" hx-get="about.html">About</ion-label>
           </ion-item>
-        </ion-list>  
+        </ion-list>
       </ion-content>
     </ion-menu>
-  
+
     <div class="ion-page" id="main">
       <ion-header>
         <ion-toolbar>
@@ -52,8 +51,8 @@
           <ion-title>Main View</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding" id="app-content" hx-get="home.html" hx-trigger="load"> 
-        
+      <ion-content class="ion-padding" id="app-content" hx-get="home.html" hx-trigger="load">
+
       </ion-content>
     </div>
   </ion-split-pane>
