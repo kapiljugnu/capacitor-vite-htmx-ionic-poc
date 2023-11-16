@@ -10,9 +10,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'about.html'),
-        home: resolve(__dirname, 'home.html'),
-        test_wasm: resolve(__dirname, "test_wasm.html")
       },
     }
   },

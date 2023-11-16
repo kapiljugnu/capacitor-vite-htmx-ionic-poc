@@ -4,24 +4,16 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
 	"net/http"
+
+	"github.com/a-h/templ"
+
+	"go-wasm/templates"
 )
 
 func main() {
-	http.HandleFunc("/hello", func(res http.ResponseWriter, req *http.Request) {
-		// params := make(map[string]string)
-		// if err := json.NewDecoder(req.Body).Decode(&params); err != nil {
-		// 	panic(err)
-		// }
-
-		res.Header().Add("Content-Type", "application/json")
-		if err := json.NewEncoder(res).Encode(map[string]string{
-			"message": fmt.Sprintf("Hello %s!", "World"),
-		}); err != nil {
-			panic(err)
-		}
-	})
+	http.Handle("/home", templ.Handler(templates.Home()))
+	http.Handle("/about", templ.Handler(templates.About()))
 	http.ListenAndServe(":8080", nil)
+
 }

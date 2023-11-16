@@ -45,4 +45,4 @@ addEventListener('activate', event => {
 })
 
 const WASM_URL = './main.wasm'
-registerWasmHTTPListener(WASM_URL, {base: "/api"})
+registerWasmHTTPListener(WASM_URL, {base: "/serve"})
